@@ -4,9 +4,17 @@ const today = new Date(),
   body = document.querySelector("body"),
   navWrapper = document.querySelector(".nav_wrapper"),
   hamburgerMenu = document.querySelector(".hamburger-menu"),
+  search = document.querySelector('a.search'),
+  searchForm = document.querySelector('.search_form'),
   hamburgerContainer = document.querySelector(".hamburger-menu_conteiner");
 
 year.innerHTML = todayYear;
+
+const openSearch = (e) => {
+  const { target } = e;
+  e.preventDefault();
+  searchForm.classList.toggle("active");
+}
 
 const navMenu = (e) => {
   const { target } = e;
@@ -48,3 +56,4 @@ new Swiper(".swiper-container", {
 });
 
 hamburgerMenu.addEventListener("click", navMenu);
+search.addEventListener("click", openSearch);
