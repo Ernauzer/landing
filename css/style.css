@@ -45,6 +45,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   min-height: 83px;
+  overflow: hidden;
 }
 .list {
   display: flex;
@@ -80,6 +81,32 @@ body {
 }
 .nav_card a:last-child {
   margin-right: 0;
+}
+.search_form {
+  position: relative;
+  z-index: 100;
+  transition: .5s ease-in-out;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.nav_search {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 5px;
+  margin: 0;
+  outline: none;
+}
+.search_clouse {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.search_form.active {
+  margin-right: 30px;
+  opacity: 1;
+  visibility: visible;
 }
 .new_trend {
   padding: 100px 230px 100px 230px;
@@ -486,7 +513,40 @@ body {
 
 /* Media query */
 
+@media (max-width: 1599px) {
+  .search_form.active {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .promo_block {
+    background-position: top;
+  }
+  .new_trend {
+    background-position: top;
+  }
+  .new_trend_sub_title {
+    font-size: 25px;
+  }
+  .new_trend_title {
+    font-size: 100px;
+  }
+  .new_trend_paragraph {
+    font-size: 25px;
+  }
+  .new_trend .wrapper, .promo_block .wrapper, header .wrapper,.footer_info_nav_block .wrapper {
+    max-width: 1500px;
+  }
+  .search_form.active {
+    width: 400px;
+  }
+}
+
 @media (max-width: 1220px) {
+  .search_form.active {
+    width: 150px;
+  }
   .wrapper {
     max-width: 1000px;
   }
@@ -533,6 +593,7 @@ body {
 }
 
 @media (max-width: 1080px) {
+  
   .fashion_section .wrapper {
     max-width: 750px;
   }
@@ -622,7 +683,7 @@ body {
   .nav_wrapper.active {
     display: flex;
     overflow: auto;
-    padding-top: 130px;
+    padding-top: 95px;
     flex-direction: column;
     justify-content: flex-start;
     position: absolute;
@@ -712,6 +773,11 @@ body {
     flex-wrap: wrap;
     flex-direction: column-reverse;
   }
+  .search_form.active {
+    width: 400px;
+    order: -1;
+    margin: 20px 0;
+  }
 }
 @media (max-width: 800px) {
   .gallery_left_col_bottom_img {
@@ -787,6 +853,11 @@ body {
   }
   .new_trend {
     background-position: top left -200px;
+  }
+  .search_form.active {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
