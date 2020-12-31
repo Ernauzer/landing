@@ -773,9 +773,11 @@ body {
     flex-wrap: wrap;
     flex-direction: column-reverse;
   }
+  .search_form {
+    order: -1;
+  }
   .search_form.active {
     width: 400px;
-    order: -1;
     margin: 20px 0;
   }
 }
