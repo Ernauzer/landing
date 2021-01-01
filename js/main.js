@@ -30,30 +30,39 @@ const navMenu = (e) => {
   }
 };
 
-new Swiper(".swiper-container", {
-  // loop: true,
-  loopFillGroupWithBlank: true,
-  // centeredSlides: true, 
-  slidesPerView: "auto",
-  slidesPerGroup: 1,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 20,
+// Если мы на главной странице, тогда свайпер будет работать. //
+if (window.location.pathname === '/index.html') {
+  new Swiper(".swiper-container", {
+    loop: true,
+    loopFillGroupWithBlank: true,
+    // centeredSlides: true, 
+    slidesPerView: "auto",
+    slidesPerGroup: 1,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // when window width is >= 768px
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // when window width is >= 1219px
+      1240: {
+        slidesPerView: 4,
+        spaceBetween: 22,
+      },
     },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    // when window width is >= 1219px
-    1219: {
-      slidesPerView: 4,
-      spaceBetween: 22,
-    },
-  },
-});
+  });
+}
 
+if (window.location.pathname === '/card/index.html') {
+  document.querySelectorAll('.title').forEach(item => {
+    item.innerHTML = `yep lol`;
+    item.style.color = 'red'
+  });
+}
 hamburgerMenu.addEventListener("click", navMenu);
 search.addEventListener("click", openSearch);

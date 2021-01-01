@@ -235,10 +235,12 @@ body {
 .fashion_card_img {
   width: 100%;
   height: 371px;
+  object-fit: cover;
+  object-position: top;
 }
 .card {
   /* min-width: 268px; */
-  max-width: 268px;
+  /* max-width: 268px; */
 }
 .card_info {
   display: block;
@@ -565,11 +567,12 @@ body {
     width: 510px;
   }
   .card {
-    min-width: 320px;
+    min-width: unset;
+    max-width: unset;
   }
   .fashion_card_img {
     height: auto;
-    min-height: 443px;
+    height: 679px;
   }
   .fashion_style_block_img {
     width: 450px;
@@ -782,6 +785,9 @@ body {
   }
 }
 @media (max-width: 800px) {
+  .fashion_card_img {
+    height: 486px;
+  }
   .gallery_left_col_bottom_img {
     height: 350px;
   }
@@ -826,6 +832,9 @@ body {
 }
 
 @media (max-width: 500px) {
+  .fashion_card_img {
+    height: 416px;
+  }
   .footer_list_block {
     margin-right: 50px;
   }
