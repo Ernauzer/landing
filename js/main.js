@@ -31,7 +31,7 @@ const navMenu = (e) => {
 };
 
 // Если мы на главной странице, тогда свайпер будет работать. //
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/landing/index.html') {
   new Swiper(".swiper-container", {
     loop: true,
     loopFillGroupWithBlank: true,
@@ -58,7 +58,7 @@ if (window.location.pathname === '/index.html') {
   });
 }
 // Если мы на странице карточки товара, вывести данный товар. //
-if (window.location.pathname === '/card/index.html') {
+if (window.location.pathname === '/landing/card/index.html') {
   document.querySelectorAll('.title').forEach(item => {
     item.innerHTML = `yep lol`;
     item.style.color = 'red'
