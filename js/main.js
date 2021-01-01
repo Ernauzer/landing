@@ -57,7 +57,7 @@ if (window.location.pathname === '/index.html') {
     },
   });
 }
-
+// Если мы на странице карточки товара, вывести данный товар. //
 if (window.location.pathname === '/card/index.html') {
   document.querySelectorAll('.title').forEach(item => {
     item.innerHTML = `yep lol`;
